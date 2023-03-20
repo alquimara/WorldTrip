@@ -1,3 +1,4 @@
+import { Banner } from '@/components/banner'
 import { Header } from '@/components/header'
 import { Flex } from '@chakra-ui/react'
 import Head from 'next/head'
@@ -11,8 +12,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main >
-        <Flex w="100vw" h="100vh">
+        <Flex w="100vw" h="100vh" direction="column">
           <Header/>
+          <Banner/>
         </Flex>
       </main>
     </>
