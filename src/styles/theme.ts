@@ -7,7 +7,8 @@ export const theme = extendTheme({
     color:{
     "background":"#fff",
     "primary":"#FFBA08",
-    "second":"#47585B"
+    "second":"#47585B",
+    "second-ligth":"#DADADA"
     }
     },
     fonts:{

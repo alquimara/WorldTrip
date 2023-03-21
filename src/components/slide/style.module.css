@@ -1,0 +1,13 @@
+.mySwiper{
+  color:#FFBA08
+
+}
+.swiperItem{
+  display:flex;
+  align-items:center;
+  justify-content: center;
+  position: relative;
+}
+.swiper-pagination-bullet-active{
+  
+}

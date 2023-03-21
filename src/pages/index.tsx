@@ -1,6 +1,10 @@
 import { Banner } from '@/components/banner'
+import { TracoDivider } from '@/components/divider'
 import { Header } from '@/components/header'
-import { Flex } from '@chakra-ui/react'
+import { TitleImport } from '@/components/Heading'
+import { Slide } from '@/components/slide'
+import { TravelType } from '@/components/TravelType'
+import { Flex,Divider,Heading } from '@chakra-ui/react'
 import Head from 'next/head'
 
 export default function Home() {
@@ -12,9 +16,15 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <main >
-        <Flex w="100vw" h="100vh" direction="column">
+        <Flex direction="column" mb="40px">
           <Header/>
           <Banner/>
+          <TravelType/>
+          <TracoDivider/>
+          <TitleImport/>
+         <Slide/>
+          
+          
         </Flex>
       </main>
     </>
