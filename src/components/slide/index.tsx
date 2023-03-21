@@ -31,7 +31,6 @@ export const Slide = () => {
         </SwiperSlide>
         <SwiperSlide>Slide 2</SwiperSlide>
       </Swiper>
-
       </Flex>
   
   </Flex>

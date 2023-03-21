@@ -1,9 +1,9 @@
-
-.swiper-button-prev::after,
-.swiper-button-next::after{
-  color: #FFBA08;
-  
+:root{
+  --swiper-pagination-bullet-size: 16px;
+  --swiper-navigation-size:30px !important;
+  --swiper-theme-color:#FFBA08 !important
 }
+
 
 
 
