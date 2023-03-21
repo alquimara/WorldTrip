@@ -8,7 +8,8 @@ export const theme = extendTheme({
     "background":"#fff",
     "primary":"#FFBA08",
     "second":"#47585B",
-    "second-ligth":"#DADADA"
+    "second-ligth":"#DADADA",
+    "second-dark":"#F5F8FA",
     }
     },
     fonts:{

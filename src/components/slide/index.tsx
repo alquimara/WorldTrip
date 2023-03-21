@@ -5,6 +5,7 @@ import { Pagination, Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
+import { SliderItem } from './SliderItem';
 
 export const Slide = () => {
   return (
@@ -22,14 +23,20 @@ export const Slide = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <Flex position="absolute" align="center" justifyContent="center" w="100%" h="100%">
-            <Text color="color.primary" fontWeight="600" fontSize="20px">
-              Slide
-            </Text>
-          </Flex>
-          <img src='/image/europa.svg' alt='europa'/>
+          <SliderItem url='/image/europa.jpg' title='Europa' subtitle='o continente mais antigo.'/>
         </SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
+        <SwiperSlide>
+          <SliderItem url='/image/americaSul.jpg' title='America do Sul' subtitle='o continente mais antigo.' alt='America do Norte'/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <SliderItem url='/image/africa.jpg' title='Africa' subtitle='o continente mais antigo.' alt='africa'/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <SliderItem url='/image/asia.jpg' title='Ásia' subtitle='o continente mais antigo.' alt='asia'/>
+        </SwiperSlide>
+        <SwiperSlide>
+          <SliderItem url='/image/oceania.jpg' title='Oceania' subtitle='o continente mais antigo.' alt='oceania'/>
+        </SwiperSlide>
       </Swiper>
       </Flex>
   

@@ -23,8 +23,6 @@ export default function Home() {
           <TracoDivider/>
           <TitleImport/>
          <Slide/>
-          
-          
         </Flex>
       </main>
     </>
