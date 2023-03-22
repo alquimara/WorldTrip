@@ -3,7 +3,7 @@ import React from 'react'
 
 export const TitleImport = () => {
   return (
-    <Heading my="52px"textAlign="center" fontSize="36px" fontWeight="500">
+    <Heading my={["1.5rem","3.25rem"]}textAlign="center" fontSize={["1.25rem","2.25rem"]} fontWeight="500">
     Vamos nessa? <br/> Então escolha seu continente
   </Heading>
   )

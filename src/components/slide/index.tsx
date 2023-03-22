@@ -10,7 +10,7 @@ import { SliderItem } from './SliderItem';
 export const Slide = () => {
   return (
     <Flex justify="center">
-      <Flex height="450px" width="1240px">
+      <Flex height="28.12rem" width={["100%","77.5rem"]}>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}

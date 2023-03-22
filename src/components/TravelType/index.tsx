@@ -6,8 +6,8 @@ import { Type } from './Type'
 
 export const TravelType = () => {
   return (
-    <Flex  mt="80px" justify="center">
-      <HStack spacing="140px">
+    <Flex  mt={20} justify="center">
+      <HStack spacing="9rem">
       <Type img='/image/cocktail.svg' title='vida noturna' alt='icon drink'/>
       <Type img='/image/surf.svg' title='praia' alt='icon praia'/>
       <Type img='/image/building.svg' title='moderno' alt='icon monumento moderno'/>

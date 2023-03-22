@@ -4,6 +4,13 @@
   --swiper-theme-color:#FFBA08 !important;
 }
 
+@media screen and (max-width: 600px) {
+  :root {
+    --swiper-pagination-bullet-size: 8px;
+    --swiper-navigation-size:25px !important;
+  }
+}
+
 
 
 
