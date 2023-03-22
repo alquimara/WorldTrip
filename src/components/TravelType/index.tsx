@@ -1,20 +1,30 @@
 
-import { Box, Flex ,Text,Stack, HStack} from '@chakra-ui/react'
+import { Box, Flex ,Text,Stack, HStack, Grid, GridItem} from '@chakra-ui/react'
 import React from 'react'
-import { TracoDivider } from '../divider'
 import { Type } from './Type'
-
-export const TravelType = () => {
+interface TravelProps{
+  dataMobile?: boolean
+}
+export const TravelType = ({dataMobile = true}:TravelProps) => {
   return (
-    <Flex  mt={20} justify="center">
-      <HStack spacing="9rem">
-      <Type img='/image/cocktail.svg' title='vida noturna' alt='icon drink'/>
-      <Type img='/image/surf.svg' title='praia' alt='icon praia'/>
-      <Type img='/image/building.svg' title='moderno' alt='icon monumento moderno'/>
-      <Type img='/image/museum.svg' title='clássico' alt='icon monumento classico'/>
-      <Type img='/image/earth.svg' title='e mais...' alt='icon terra'/>
-      </HStack>
-      
+    <Flex justify="center" mt="7.12rem">
+    <Grid templateColumns={['repeat(2, auto)','repeat(5,auto)']} gap={["3rem","9rem"]}>
+      <GridItem>
+        <Type img= {dataMobile ?'/image/cocktail.svg':'/image/circulo.svg'} title='vida noturna' alt='icon drink' />
+      </GridItem>
+      <GridItem>
+      <Type img={dataMobile?'/image/surf.svg':'/image/circulo.svg'} title='praia' alt='icon praia'/>
+      </GridItem>
+      <GridItem>
+      <Type img={dataMobile?'/image/building.svg':'/image/circulo.svg'} title='moderno' alt='icon monumento moderno'/>
+      </GridItem>
+      <GridItem>
+      <Type img={dataMobile ?'/image/museum.svg':'/image/circulo.svg'} title='clássico' alt='icon monumento classico'/>
+      </GridItem>
+      <GridItem colSpan={[2,1]}>
+      <Type img={dataMobile ? '/image/earth.svg':'/image/circulo.svg' } title='e mais...' alt='icon terra' />
+      </GridItem>
+    </Grid>
     </Flex>
   )
 }

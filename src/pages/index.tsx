@@ -4,10 +4,14 @@ import { Header } from '@/components/header'
 import { TitleImport } from '@/components/Heading'
 import { Slide } from '@/components/slide'
 import { TravelType } from '@/components/TravelType'
-import { Flex,Divider,Heading } from '@chakra-ui/react'
+import { Flex,Divider,Heading, useBreakpointValue } from '@chakra-ui/react'
 import Head from 'next/head'
 
 export default function Home() {
+  const iswideVersion  = useBreakpointValue({
+    base:false,
+    lg:true
+  })
   return (
     <>
       <Head>
@@ -18,8 +22,8 @@ export default function Home() {
       <main >
         <Flex direction="column" mb="40px">
           <Header/>
-          <Banner/>
-          <TravelType/>
+          <Banner dataMobile= {iswideVersion}/>
+          <TravelType dataMobile ={iswideVersion}/>
           <TracoDivider/>
           <TitleImport/>
          <Slide/>

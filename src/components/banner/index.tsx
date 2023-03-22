@@ -1,12 +1,10 @@
 
 import { Box, Heading, Text, Flex,Stack, Image, useBreakpointValue } from '@chakra-ui/react';
 import React from 'react'
-
-export const Banner = () => {
-  const iswideVersion  = useBreakpointValue({
-    base:false,
-    lg:true
-  })
+interface bannerProps{
+  dataMobile?: boolean
+}
+export const Banner = ({dataMobile =true}:bannerProps) => {
   return (
     <Flex  backgroundImage="/image/banner.svg" width="100%" backgroundSize="cover" height={["10.18rem","10.18rem","20.93rem"]}>
       <Flex mt={[7,7,20]} mx={["1rem","1rem","8.75rem"]} align="center" width="100%">
@@ -15,12 +13,10 @@ export const Banner = () => {
         infinitas possibilidades.</Heading>
         <Text pt={[2,2,5]} pb={[7,7,"4.37rem"]} color="color.second-ligth" fontWeight="400" fontSize={["0.87rem","0.87rem","1.25rem"]}>Chegou a hora de tirar do papela viagem que você sempre sonhou. </Text>
         </Box>
-        {iswideVersion &&  <Box position="absolute" top="11.25rem" right="8.75rem">
+        {dataMobile &&  <Box position="absolute" top="11.25rem" right="8.75rem">
           <Image src='/image/aviao.svg'alt='aviao'/>
         </Box>}
-        
       </Flex>
-     
     </Flex>
   )
 }
