@@ -4,8 +4,9 @@ import { Header } from '@/components/header'
 import { TitleImport } from '@/components/Heading'
 import { Slide } from '@/components/slide'
 import { TravelType } from '@/components/TravelType'
-import { Flex,Divider,Heading, useBreakpointValue } from '@chakra-ui/react'
+import { Flex,Divider,Heading, useBreakpointValue, Box } from '@chakra-ui/react'
 import Head from 'next/head'
+import Link from 'next/link'
 
 export default function Home() {
   const iswideVersion  = useBreakpointValue({
@@ -21,12 +22,15 @@ export default function Home() {
       </Head>
       <main >
         <Flex direction="column" mb="40px">
-          <Header/>
           <Banner dataMobile= {iswideVersion}/>
           <TravelType dataMobile ={iswideVersion}/>
           <TracoDivider/>
           <TitleImport/>
-         <Slide/>
+          <Link href='/paises/pais'legacyBehavior >
+          <Box as='a' cursor='pointer'>
+            <Slide/>
+          </Box>
+          </Link>
         </Flex>
       </main>
     </>
