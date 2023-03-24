@@ -1,12 +1,11 @@
-import { Banner } from '@/components/banner'
+
 import { BannerPais } from '@/components/bannerPais'
 import { CardPais } from '@/components/cardPais'
 import { InfoPais } from '@/components/infoPais'
 import { TextArticle } from '@/components/TextArticle'
-import { Box, Card, Grid, GridItem, Heading,HStack,Text,Flex,Image,Stack, CardBody,CardFooter,Button, Icon, Toast, Popover, PopoverTrigger, PopoverContent ,PopoverBody, useBoolean} from '@chakra-ui/react'
+import { Box,  Grid, GridItem, Heading,HStack,Text,Flex,Button, Icon, Toast, Popover, PopoverTrigger, PopoverContent ,PopoverBody, useBoolean} from '@chakra-ui/react'
 
-import React, { useState } from 'react'
-import { CardTitle } from '../../components/cardPais/index';
+import React from 'react'
 import { FiChevronLeft,FiInfo} from "react-icons/fi";
 import Link from 'next/link'
 
@@ -20,9 +19,9 @@ export default function Pais(){
     <Box as="a">
     <Icon as={FiChevronLeft} 
     position="absolute" 
-    top={["17px","34px"]} 
-    left={["16px","140px"]} 
-    fontSize={["18px","35px"]}
+    top={["1.06rem","2.12rem"]} 
+    left={["1rem","8.75rem"]} 
+    fontSize={["1.12rem","2.18rem"]}
     _hover={{
       color:'gray.400',
       cursor:'pointer'
@@ -121,9 +120,7 @@ export default function Pais(){
           bandeira='/image/reinounido.svg'
           />
         </GridItem>
-        
       </Grid>
-      
     </Flex>
   </Flex>
   )
