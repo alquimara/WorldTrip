@@ -1,14 +1,35 @@
 import { Banner } from '@/components/banner'
 import { TracoDivider } from '@/components/divider'
-import { Header } from '@/components/header'
 import { TitleImport } from '@/components/Heading'
-import { Slide } from '@/components/slide'
+import { SliderItem } from '@/components/slide/SliderItem'
 import { TravelType } from '@/components/TravelType'
-import { Flex,Divider,Heading, useBreakpointValue, Box } from '@chakra-ui/react'
+import { getPrismicClient } from '@/service/prismic'
+import { Flex, useBreakpointValue, Box } from '@chakra-ui/react'
+import { GetStaticProps } from 'next'
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Navigation} from "swiper";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 import Head from 'next/head'
 import Link from 'next/link'
 
-export default function Home() {
+
+
+
+
+
+interface Continente{
+  uid:string,
+  banner:string,
+  title:string,
+  subtitle:string,
+}
+interface continentesProps{
+  continentes:Continente[];
+}
+
+export default function Home({continentes}:continentesProps) {
   const iswideVersion  = useBreakpointValue({
     base:false,
     lg:true
@@ -28,7 +49,28 @@ export default function Home() {
           <TitleImport/>
           <Link href='/paises/pais'legacyBehavior >
           <Box as='a' cursor='pointer'>
-            <Slide/>
+          <Flex justify="center">
+            <Flex height="28.12rem" width={["100%","77.5rem"]}>
+              <Swiper
+                slidesPerView={1}
+                loop={true}
+                pagination={{
+                clickable: true,
+                }}
+                navigation={true}
+                modules={[Pagination, Navigation]}
+                className="mySwiper"
+              >
+                {continentes.map((cont)=>(
+                <SwiperSlide key={cont.uid}>
+                  <SliderItem url={cont.banner} title={cont.title} subtitle={cont.subtitle}/>
+                </SwiperSlide>
+        ))}
+        
+      </Swiper>
+    </Flex>
+  </Flex>
+            
           </Box>
           </Link>
         </Flex>
@@ -36,3 +78,26 @@ export default function Home() {
     </>
   )
 }
+
+export const getStaticProps:GetStaticProps = async () => {
+  
+  const prismic = getPrismicClient({});
+  const contResponse = await prismic.getByType('continentes',{
+  })
+
+  const continentes = contResponse.results.map(cont =>
+    {
+      return{
+        uid:cont.uid,
+        banner:cont.data.banner.url,
+        title:cont.data.title,
+        subtitle:cont.data.subtitle,
+      }
+    })
+
+
+  return {
+    props: {continentes}
+  }
+}
+
