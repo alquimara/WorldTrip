@@ -1,4 +1,4 @@
-import { Grid, HStack, Stack,Text, TextProps } from '@chakra-ui/react'
+import { Box, Grid, HStack, Stack, Text, TextProps, Flex } from '@chakra-ui/react';
 import React from 'react'
 
 
@@ -12,10 +12,10 @@ interface infoPaisProps{
 }
 export const InfoPais = ({numero,nome}:infoPaisProps) => {
   return (
-    <Text>
+    <Flex direction='column'>
       <Text color='color.primary' fontSize={["1.5rem","3rem"]} lineHeight={["2.25rem","4.5rem"]} fontWeight="600" align="center">{numero}</Text>
-      <Text color='color.second' fontSize={["1.12rem","1.5rem"]} lineHeight={["1.68rem","2.25rem"]} fontWeight={["400","600"]} align="center">{nome}</Text>
-    </Text>
+      <Text color='color.second' fontSize={["1.12rem","1.5rem"]} lineHeight={["1.68rem","2.25rem"]} fontWeight={["400","600"]} align="center" >{nome}</Text>
+    </Flex>
   )
 }
 

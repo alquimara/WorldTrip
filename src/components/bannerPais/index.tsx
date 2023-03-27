@@ -13,7 +13,9 @@ export const BannerPais = ({url,title}:bannerpaisProps) => {
     height={["150px",'500px']}
     width="100%" 
     backgroundImage={url} 
-    backgroundSize="cover">
+    backgroundSize="cover"
+    backgroundPosition='center'
+    >
     <Flex align={["center","end"]} 
     justifyContent={["center", "start"]} 
     backdropFilter='auto' 

@@ -12,12 +12,6 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import Head from 'next/head'
-import Link from 'next/link'
-
-
-
-
-
 
 interface Continente{
   uid:string,
@@ -47,8 +41,6 @@ export default function Home({continentes}:continentesProps) {
           <TravelType dataMobile ={iswideVersion}/>
           <TracoDivider/>
           <TitleImport/>
-          <Link href='/paises/pais'legacyBehavior >
-          <Box as='a' cursor='pointer'>
           <Flex justify="center">
             <Flex height="28.12rem" width={["100%","77.5rem"]}>
               <Swiper
@@ -61,18 +53,15 @@ export default function Home({continentes}:continentesProps) {
                 modules={[Pagination, Navigation]}
                 className="mySwiper"
               >
-                {continentes.map((cont)=>(
+                {continentes && continentes.map((cont)=>(
                 <SwiperSlide key={cont.uid}>
-                  <SliderItem url={cont.banner} title={cont.title} subtitle={cont.subtitle}/>
+                  <SliderItem url={cont.banner} title={cont.title} subtitle={cont.subtitle} uidUrl={`/paises/${cont.uid}`}/>
                 </SwiperSlide>
         ))}
-        
       </Swiper>
     </Flex>
   </Flex>
-            
-          </Box>
-          </Link>
+          
         </Flex>
       </main>
     </>

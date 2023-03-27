@@ -26,13 +26,13 @@ export const CardPais = ({title,subtitle,url,bandeira}:CardPaisProps) => {
         <Flex align="center" justifyContent="space-between" px="1.5rem">
           <Box mt="1.12rem" mb="1.56rem" fontFamily='Barlow'>
             <Text fontSize="1.25rem" lineHeight="1.56rem" fontWeight="600" color="color.second">
-             {title}
+            {title}
             </Text>
             <Text fontSize="1rem" lineHeight="1.62rem" color='color.tertiary' mt="0.75rem">
               {subtitle}
             </Text>
           </Box>
-        <Image src={bandeira} borderRadius="full"/>
+        <Image src={bandeira} borderRadius="full" boxSize='30px' border='1px solid rgba(11, 9, 3, 0.11)'/>
         </Flex>
       </CardBody>
   </Card>
